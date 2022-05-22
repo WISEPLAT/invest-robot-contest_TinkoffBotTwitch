@@ -47,5 +47,26 @@
 
 ## Как это повторить?
 
+Клонируем репозиторий
 
+```
+git clone https://github.com/valerii-chirkov/tinkoff-contest.git
+```
 
+Апгрейдим pip
+```
+pip install --upgrade pip
+```
+
+Заходим в папку tinkoff-contest и устанавливаем нужные пакеты
+
+```
+pip install -r requirements.txt
+```
+
+Прописываем данные для api в <b>tinkoff_creds.py</b> и  <b>twitch_creds.py</b>. Инструкции по получению данных лежат в самих файлах.
+
+Запускаем бота
+```
+python3 bot.py
+```
