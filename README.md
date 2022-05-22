@@ -66,6 +66,8 @@ pip install -r requirements.txt
 
 Прописываем данные для api в <b>tinkoff_creds.py</b> и  <b>twitch_creds.py</b>. Инструкции по получению данных лежат в самих файлах.
 
+Для тестирования бота, приложил <b>_twitch_creds.py</b>, просто скопировать содержимое и вставить в <b>twitch_creds.py</b>.
+
 Запускаем бота
 ```
 python3 bot.py
