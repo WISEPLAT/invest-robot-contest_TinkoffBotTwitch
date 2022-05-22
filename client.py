@@ -64,9 +64,7 @@ def get_figi(ticker):
         with Client(TOKEN) as client:
             instruments = client.instruments
             df = DataFrame(instruments.shares().instruments, columns=['name', 'figi', 'ticker'])
-
             instrument_figi = df[df['ticker'] == ticker]['figi'].iloc[0]
-            instrument_name = df[df['ticker'] == ticker]['name'].iloc[0]
 
             return instrument_figi
 
@@ -82,7 +80,6 @@ def get_ticker(figi):
         with Client(TOKEN) as client:
             instruments = client.instruments
             df = DataFrame(instruments.shares().instruments, columns=['name', 'figi', 'ticker'])
-
             instrument_ticker = df[df['figi'] == figi]['ticker'].iloc[0]
 
             return instrument_ticker
@@ -98,43 +95,11 @@ def get_current_stocks():
     try:
         with Client(TOKEN) as client:
             instruments = client.operations.get_positions(account_id=tinkoff_creds.account_id_test)
-
             df = DataFrame(instruments.securities, columns=['figi', 'balance'])
-
             stocks = list(df['figi'])
 
             return stocks
-            # print('BBG00F9XX7H4' in stocks)
-            # print(instruments)
 
     except RequestError as ex:
         return ex
 
-
-# def main():
-#     try:
-#         with Client(TOKEN) as client:
-#             print(client.users.get_accounts())
-#     except RequestError as ex:
-#         print(str(ex))
-
-
-# if __name__ == "__main__":
-#     pass
-    # main()
-    # buy(ticker='RNFT')
-    # sell(ticker='RNFT')
-    # print(get_ticker('BBG00F9XX7H4'))
-    # get_current_stocks_value()
-    # with Client(TOKEN) as client:
-        
-    #     print(client.users.get_accounts())
-        # instruments = client.instruments
-        # instruments_df = DataFrame(instruments.shares().instruments, columns=['name', 'figi', 'ticker'])
-        # instrument_figi = instruments_df[instruments_df['ticker'] == 'RNFT']
-
-        # print(instrument_figi)
-        # positions = client.operations.get_portfolio(account_id=tinkoff_creds.account_id_test).positions
-        # print(positions[0])
-
-        # raw_pos = client.operations.get_positions(account_id=tinkoff_creds.account_id_test)
