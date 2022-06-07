@@ -1,5 +1,0 @@
-TMI_TOKEN = 'oauth:7dyj8g8yri6ft5pxeusptexpvnvgfy'
-CLIENT_ID= '1xe4bri0l3rhwxabyodk8u63x1cb78'
-BOT_NICK= 'invest-bot'
-BOT_PREFIX= '!'
-CHANNEL='#3jpantoja'
